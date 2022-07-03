@@ -2,12 +2,12 @@ package com.example.multiplayactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     public void channgeActivity(View view){
-
+        Intent intent = new Intent(MainActivity.this , MainActivity2.class);
+        startActivity(intent);
     }
 }
