@@ -8,14 +8,18 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity2 extends AppCompatActivity {
-
+    TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        textView = findViewById(R.id.textView2);
+        Intent intent = getIntent();
+        String name = intent.getStringExtra("userInput");
+        textView.setText("Name: " +  name);
     }
     public void changeActivity(View view){
-        Intent intent = new Intent(MainActivity2.this , MainActivity.class);
+        Intent intent = new Intent(getApplicationContext() , MainActivity.class);
         startActivity(intent);
     }
 }
